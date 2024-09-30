@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* ========================================
+   Base Styles
+   ======================================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  padding-bottom: 4rem;
+  font-family: "Roboto";
+}
+
+/* ========================================
+   Layout
+   ======================================== */
+
+header {
+  display: flex;
+  justify-content: center;
+  height: 4rem;
+  padding: 1rem 0;
+  border-top: 1px solid rgb(227, 227, 227);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+main {
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 2rem 11rem;
+}
+
+/* ========================================
+   Components
+   ======================================== */
+
+h1 {
+  margin: 0;
+  word-spacing: 10px;
+}
+
+/* +-icon button */
+.new-todo {
+  color: black;
+  cursor: pointer;
+}
+
+/* Filter Group */
+.filter input[type="radio"] {
+  display: none;
+}
+
+.filter {
+  border: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked + .filter-label {
+  background-color: rgb(2, 117, 255);
+  color: white; 
+}
+
+.filter-label {
+  padding: 8px;
+  border-radius: 5px;
+}
+
+/* Todo-List */
+
+ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  overflow: scroll;
+  width: 70%;
+  scrollbar-width: none; 
+}
+
+.ul-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  color: grey;
+  width: 75vw;
+}
+
+ul::-webkit-scrollbar {
+    display: none;
+}
+
+/* List Items */
+
+.todo-item {
+  border-radius: 5px;
+  display: flex;
+  height: 2rem;
+  padding-top: 0.36rem;
+  padding-bottom: 0.36rem;
+  padding-left: 0.26rem;
+  transition: all 250ms ease;
+}
+
+.todo-item-expand {
+  height: 7rem;
+  padding: 0.7rem 0.26rem;
+  background-color: rgb(225, 225, 225);
+  margin: 2rem 0;
+}
+
+.todo-item-selected {
+  background-color: rgb(225, 225, 225);
+}
+
+.checkbox-container {
+  padding: none;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-left: 0.5rem;
+}
+
+.content-container-expand {
+  gap: 0.5rem;
+}
+
+.todo-title {
+  text-overflow: ellipsis;
+}
+
+.notes {
+  transition: all 300ms;
+  display: none;
+}
+
+.notes-visible {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+input[type="text"], textarea {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  outline: none;
+  box-shadow: none;
+  appearance: none;
+}
+
+textarea {
+  resize: none;
+  overflow: hidden;
+}

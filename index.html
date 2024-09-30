@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="description" content="A simple to-do app to help you manage your tasks efficiently.">
+  <meta name="author" content="Wim">
+  <title>To-Do App</title>
+  <script type="module" src="/app.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <svg class="new-todo" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" class="size-6" role="button" aria-label="Add new task">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+    </svg>
+  </header>
+  <main>
+    <h1>⭐ Tasks</h1>
+
+    <fieldset class="filter">
+      <input type="radio" name="filter" id="filter-active" value="active" checked>
+      <label for="filter-active" class="filter-label">Active</label>
+      <input type="radio" name="filter" id="filter-completed" value="completed">
+      <label for="filter-completed" class="filter-label">Logbook</label>
+    </fieldset>
+
+    <ul class="todo-list"></ul>
+  </main>
+</body>
+
+</html>
